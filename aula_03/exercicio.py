@@ -6,7 +6,28 @@
     mensagem informado da impossibilidade de realização do saque.
 
 """
+valor_para_saque = 1#int(input("Coloque o valor para saque (Apenas multiplos de 5.): "))
 
+
+tentativas = 3
+
+while valor_para_saque%5 != 0:
+    tentativas -= 1
+
+    if tentativas <= 0:
+        print("Tentativas esgotadas")
+        break
+
+    valor_para_saque = int(input(f"{tentativas}x - Deu Erro. Tente novamente: "))
+else:
+    cedulas = {
+        "c50": valor_para_saque // 50,
+        "c20": valor_para_saque % 50 // 20,
+        "c10": valor_para_saque % 50 % 20 // 10,
+        "c5": valor_para_saque % 50 % 20 % 10 // 5
+    }
+
+    print(f"Resultado:\n {cedulas['c50']} de 50\n {cedulas['c20']} de 20\n {cedulas['c10']} de 10\n {cedulas['c5']} de 5")
 
 
 """
@@ -25,3 +46,29 @@
         - O valor do desconto;
         - O salário líquido.
 """
+
+if 1 == 2: 
+    try:
+
+        funcionario = "" #input("Digite seu nome: ")
+
+        salario = 10 #float(input("Digite o seu salário: "))
+
+        desconto = 0
+
+        if salario > 5000:
+            desconto = (salario - 5000) * 0.1
+
+        print("="*50)
+        print("")
+        print(f"Nome do Funcionário: {funcionario}")
+        print(f"Salário Bruto: {salario}")
+        print(f"Desconto: {desconto}")
+        print(f"Salário liquido: {salario - desconto}")
+
+    except NameError as n:
+        print(f"Deu um erro de nome: {n}")
+    except ValueError as v:
+        print(f"Deu um erro de valor: {v}")
+        # raise NameError("Deu erro de valor, mas eu forcei um erro de nome.")
+        # pass
