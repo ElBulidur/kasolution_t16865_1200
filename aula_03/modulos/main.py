@@ -9,7 +9,7 @@ print(col.Fore.CYAN + "Julio Pereira")
 
 from tqdm import tqdm
 
-for i in tqdm(range(5), colour="red"):
+for i in tqdm(range(50), colour="red"):
     time.sleep(1)
 else:
     print("Tempo esgotou!!!")
