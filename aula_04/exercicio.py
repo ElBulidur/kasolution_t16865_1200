@@ -6,6 +6,23 @@
 
 """
 
+# lista = list()
+
+# for x in range(5):
+#     nome = input(f"Escreva o {x+1}° nome: ")
+#     lista.append(nome) # RETORNA OU MODIFICA
+
+# lista.sort()
+
+# print(lista)
+
+# lista = [input(f"Escreva o {x+1}° nome: ") for x in range(5)]
+
+# lista.sort()
+
+# print(lista)
+
+
 
 
 """
@@ -17,3 +34,24 @@
         10.
 
 """
+
+
+# import random as rn
+from random import random as rn, randint as rni
+
+
+# numeros_maiores_que_10 = []
+
+# for x in range(100):
+#     numero = rni(0, 101)
+
+#     if numero > 10:
+#         numeros_maiores_que_10.append(numero)
+
+# numeros_maiores_que_10.sort()
+
+
+print(f"Os numeros gerados maiores que 10 são: {[x for x in [rni(0, 101) for x in range(100)] if x > 10]}")
+
+
+

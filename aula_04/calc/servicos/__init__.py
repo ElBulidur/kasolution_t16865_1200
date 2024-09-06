@@ -1,0 +1,1 @@
+from .tratando_tipos import verificar_tipo
