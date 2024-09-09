@@ -19,7 +19,7 @@ operacaoes_lista = [
     lambda x, y: x / y
 ]
 
-print(operacaoes_lista[0](2,3))
+# print(operacaoes_lista[0](2,3))
 
 operacoes = {
     "soma": lambda x, y: x + y,
