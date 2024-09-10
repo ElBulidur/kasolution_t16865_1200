@@ -9,8 +9,6 @@
 # ATRIBUTOS / MÉTHODOS
 
 
-
-
 # ABSTRAÇÃO (Classe)
 class Copo:
     def __init__(self) -> None:
@@ -18,8 +16,10 @@ class Copo:
         self.tipo = "Americano"
         self.estado = "limpo"
 
-    def sujar(self):
-        self.estado = "sujo"
+    def sujar(self, porcentagem=100):
+        self.estado = f"{porcentagem}% sujo "
+
+        return self.estado
 
 
 # print(Copo)
@@ -42,8 +42,8 @@ meu_copo.cor = "Amarelo"
 
 print(f"Pegue o copo 2 e ele estava {meu_copo_2.estado}")
 
-print("Usei ele....")
+print(f"Usei ele e ele ficou {meu_copo_2.sujar(30)}")
 
-meu_copo_2.sujar()
 
-print(f"Agora ele esta {meu_copo_2.estado}")
+
+# print(f"Agora ele esta {meu_copo_2.estado}")
