@@ -1,6 +1,5 @@
 from funcoes import Soma, Divisao, Multiplicacao, Subtracao
 
-
 num_1 = 10
 num_2 = 'g12'
 
