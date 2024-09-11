@@ -13,3 +13,22 @@
          get_csv(): usado para retornar os dados da pessoa separados por ponto-e-vírgula (;) com o propósito
         de gerar um arquivo no formato CSV (o arquivo não será contemplado neste exercício).
 """
+
+from pessoa_entity import PessoaDois, PessoaUm
+
+
+
+pessoa_um = PessoaUm()
+
+pessoa_dois = PessoaDois()
+
+# print(PessoaUm)
+# print(PessoaDois)
+
+# print(pessoa_um) # 2 COLUNAS
+# print(pessoa_dois) # 0 COLUNAS
+
+
+# print(pessoa_um.nome)
+pessoa_dois.setDados("julio", 84)
+print(pessoa_dois.getDados())
