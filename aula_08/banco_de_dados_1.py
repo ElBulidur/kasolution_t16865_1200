@@ -19,7 +19,6 @@ def pegar_conexao():
 # CRUD => CREATE(Criar), READ(Ler), UPDATE(Atualizar) e DELETE(Deletar)
 
 #CREATE
-dados = ["Julio", "julio@gmail.com"]
 
 def cadastrar_aluno(nome, email):
 
@@ -36,10 +35,6 @@ def cadastrar_aluno(nome, email):
     conn.close()
 
     print("Aluno cadastrado com sucesso!")
-
-
-# cadastrar_aluno("Ana", "ana@email.com")
-
 
 def pegar_alunos():
     conn = pegar_conexao()
@@ -58,8 +53,6 @@ def pegar_alunos():
 
     conn.close()
 
-dados = ["Julio Novo", "julio_novo@email.com"]
-
 def atualizar_aluno(dados, id):
 
     conn = pegar_conexao()
@@ -75,5 +68,44 @@ def atualizar_aluno(dados, id):
     conn.close()
 
     print("Aluno atualizado com sucesso!")
+
+def deletar_aluno(id):
+    conn = pegar_conexao()
+
+    sql = "DELETE FROM alunos WHERE id = %s"
+
+    cursor = conn.cursor()
+
+    cursor.execute(sql, [id])
+
+    if cursor.rowcount:
+        conn.commit()
+        print("Registro deletado com sucesso!")
+    else:
+        print("Nenhum registro foi deletado do sistema.")
+    conn.close()
+
+def pegar_aluno_por_id(id):
+    conn = pegar_conexao()
+
+    sql = "SELECT * FROM alunos WHERE id=%s"
+
+    cursor = conn.cursor()
+
+    cursor.execute(sql, [id])
+
+    registro = cursor.fetchone()
+
+    cursor.close()
+
+    if registro:
+        print(registro)
+        return registro
+    else:
+        print("Usuário não encontrado.")
+
+
+if __name__ == "__main__":
+    cadastrar_aluno("Ana", "ana@email.com")
 
 
