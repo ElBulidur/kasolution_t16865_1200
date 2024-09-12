@@ -102,6 +102,29 @@ for dados in pasta_para_openpyxl["Obj, Metas, Ind. e Res. Interm."].iter_rows(va
 
 import pandas as pd
 
+# df = pd.read_excel("palinhas_vendas.xlsx")
+df = pd.read_excel("ADH130778_Resultado.xlsx")
+
+# print(df.head(1))
+# print(df.tail(1))
+# print(df.columns)
+# print(df.shape)
+# print(df.info())
+# print(df['Programas no Plano Plurianual 2020-2023, de responsabilidade do Ministério da Defesa'].max())
+# print(df['Unnamed: 1'].unique())
+
+import matplotlib.pyplot as plt
+
+descricao = df.describe()
+
+# descricao.to_excel("descricao_planilha_tal.xlsx")
+
+descricao.plot(kind="bar")
+
+plt.show()
+
+
+
 
 
 

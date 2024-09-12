@@ -1,0 +1,3 @@
+-- Active: 1726101959995@@127.0.0.1@3306
+CREATE DATABASE kasolution
+    DEFAULT CHARACTER SET = 'utf8mb4';
