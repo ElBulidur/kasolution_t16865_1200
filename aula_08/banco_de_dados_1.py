@@ -34,7 +34,7 @@ def cadastrar_aluno(nome, email):
 
     conn.close()
 
-    print("Aluno cadastrado com sucesso!")
+    print(f"Aluno {nome} cadastrado com sucesso!")
 
 def pegar_alunos():
     conn = pegar_conexao()
@@ -83,6 +83,7 @@ def deletar_aluno(id):
         print("Registro deletado com sucesso!")
     else:
         print("Nenhum registro foi deletado do sistema.")
+        
     conn.close()
 
 def pegar_aluno_por_id(id):
